@@ -56,15 +56,15 @@
 <center> <h1> Student Login Form </h1> </center>
 <form action="/login" method="post">
     <div class="container">
-        <label>Username : </label>
-        <input th:value="${user}" type="text" placeholder="Enter Username" name="username" required>
+        <label>Email : </label>
+        <input th:value="${userMail}" type="text" placeholder="Enter email" name="email" required>
         <label>Password : </label>
         <input th:value="${pass}" type="password" placeholder="Enter Password" name="password" required>
         <div th:if="${error != null}"  class="alert alert-danger" th:text="${error}">
         </div>
         <button type="submit">Login</button>
         <input type="checkbox" checked="checked"> Remember me
-        <button type="button" class="cancel"> Cancel</button>
+        <a href="/login/register"><button type="button" class="cancel"> Register</button></a>
         Forgot <a href="#"> password? </a>
     </div>
 </form>

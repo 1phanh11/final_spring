@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../Register.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+            <h3>LOGIN</h3>
+            <a href="/login"><input type="submit" name="" value="Login"/><br/></a>
+        </div>
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">REGISTER TO USE EMAIL</h3>
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <form method="post" action="/login/register">
+                                <div class="form-group">
+                                    <input th:value="${user}" name="username" type="text" class="form-control" placeholder="User Name *" value="" required/>
+                                    <div th:if="${error1 != null}"  class="alert alert-danger" th:text="${error1}"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input th:value="${email}" name="email"  type="email" class="form-control" placeholder="Your Email *" value="" required/>
+                                    <div th:if="${error2 != null}"  class="alert alert-danger" th:text="${error2}"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input th:value="${phone}" name="phone" type="text" minlength="10" maxlength="10" class="form-control" placeholder="Your Phone *" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <input th:value="${pass}" name="password" type="password" class="form-control" placeholder="Password *" value="" required/>
+                                    <div th:if="${error3 != null}"  class="alert alert-danger" th:text="${error3}"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input th:value="${confirm}" name="confirmpassword" type="password" class="form-control" placeholder="confirm password *" value="" required/>
+                                    <div th:if="${error4 != null}"  class="alert alert-danger" th:text="${error4}"></div>
+                                </div>
+                                <div th:if="${success != null}"  class="alert alert-success" th:text="${success}"></div>
+                                <div class="col-md-9">
+                                    <input type="submit" class="btnRegister"  value="Register"/>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

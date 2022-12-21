@@ -20,7 +20,7 @@ public class Mail {
             strategy = GenerationType.IDENTITY
     )
     @Column(
-            name = "idUser",
+            name = "idMail",
             nullable = false
     )
     private int id;
